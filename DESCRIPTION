@@ -1,6 +1,6 @@
 Package: phacking
 Title: Sensitivity Analysis for p-Hacking in Meta-Analyses
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: c(
   person("Mika", "Braginsky", email = "mika.br@gmail.com", role = c("aut", "cre")),
   person("Maya", "Mathur", email = "mmathur@stanford.edu", role = c("aut")))
@@ -27,13 +27,13 @@ License: MIT + file LICENSE
 URL: https://github.com/mikabr/phacking
 BugReports: https://github.com/mikabr/phacking/issues
 Encoding: UTF-8
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 RdMacros: Rdpack
 Biarch: true
-Depends: R (>= 3.4.0)
-Imports: dplyr, ggplot2, methods, purrr, rlang, stats, stats4,
-        truncnorm, Rcpp (>= 0.12.0), RcppParallel (>= 5.0.1), Rdpack,
-        rstan (>= 2.18.1), rstantools (>= 2.2.0)
+Depends: R (>= 4.1.0)
+Imports: dplyr, ggplot2, metabias, metafor, methods, purrr, rlang,
+        stats, stats4, truncnorm, Rcpp (>= 0.12.0), RcppParallel (>=
+        5.0.1), Rdpack, rstan (>= 2.18.1), rstantools (>= 2.2.0)
 LinkingTo: BH (>= 1.66.0), Rcpp (>= 0.12.0), RcppEigen (>= 0.3.3.3.0),
         RcppParallel (>= 5.0.1), rstan (>= 2.18.1), StanHeaders (>=
         2.18.0)
@@ -42,9 +42,9 @@ LazyData: true
 Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3
 NeedsCompilation: yes
-Packaged: 2022-06-17 20:18:49 UTC; mbraginsky
+Packaged: 2023-01-20 22:20:38 UTC; mbraginsky
 Author: Mika Braginsky [aut, cre],
   Maya Mathur [aut]
 Maintainer: Mika Braginsky <mika.br@gmail.com>
 Repository: CRAN
-Date/Publication: 2022-06-21 09:40:02 UTC
+Date/Publication: 2023-01-20 22:40:02 UTC

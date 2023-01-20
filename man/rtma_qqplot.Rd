@@ -7,10 +7,7 @@
 rtma_qqplot(rtma)
 }
 \arguments{
-\item{rtma}{Output of \code{phacking_rtma()}.}
-}
-\value{
-No return value, draws a plot.
+\item{rtma}{Output of \code{\link[=phacking_meta]{phacking_meta()}}.}
 }
 \description{
 To assess the fit of right-truncated meta-analysis and possible violations of
@@ -21,8 +18,9 @@ line, the right-truncated meta-analysis may not fit adequately.
 }
 \examples{
 \donttest{
-set.seed(22)
-lodder_rtma <- phacking_rtma(lodder$yi, lodder$vi, parallelize = FALSE)
-rtma_qqplot(lodder_rtma)
+money_priming_rtma <- phacking_meta(money_priming_meta$yi,
+                                    money_priming_meta$vi,
+                                    parallelize = FALSE)
+rtma_qqplot(money_priming_rtma)
 }
 }

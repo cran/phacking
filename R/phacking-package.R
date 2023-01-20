@@ -1,25 +1,24 @@
 #' @keywords internal
 #' @references
-#' \insertRef{mathur2022}{phacking}
+#' \insertRef{mathur2022phacking}{metabias}
 #'
-#' \insertRef{lodder2019}{phacking}
+#' \insertRef{lodder2019}{metabias}
 #'
-#' \insertRef{stan2022}{phacking}
+#' \insertRef{stan2022}{metabias}
 "_PACKAGE"
 
 ## usethis namespace: start
 #' @useDynLib phacking, .registration = TRUE
+#' @import ggplot2
 #' @import methods
 #' @import Rcpp
-#' @import ggplot2
-#' @importFrom rstan sampling
-#' @importFrom stats dnorm ecdf median pnorm qnorm
-#' @importFrom dplyr %>% as_tibble filter if_else mutate pull rowwise select
-#'   tibble
-#' @importFrom rlang .data
+#' @importFrom dplyr as_tibble filter if_else mutate pull rowwise select tibble
 #' @importFrom Rdpack reprompt
+#' @importFrom rlang .data
+#' @importFrom rstan sampling
+#' @importFrom stats dnorm ecdf median pnorm qnorm quantile
 ## usethis namespace: end
 NULL
 
 #' @keywords internal
-lodder_sub <- function() phacking::lodder[1:50, ]
+money_priming_sub <- function() phacking::money_priming_meta[1:50, ]

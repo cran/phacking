@@ -16,14 +16,11 @@ the point estimates.}
 (Only one of \code{vi} or \code{sei} needs to be specified).}
 
 \item{alpha_select}{Alpha level at which an estimate's probability of being
-favored by p-hacking and/or by publication bias is assumed to change (i.e.,
+favored by publication bias is assumed to change (i.e.,
 the threshold at which study investigators, journal editors, etc., consider
 an estimate to be significant).}
 
 \item{crit_color}{Color for line and text are critical z-score.}
-}
-\value{
-No return value, draws a plot.
 }
 \description{
 Plots the Z-scores of all published point estimates. When p-hacking favors
@@ -38,5 +35,5 @@ sign-reversed critical value (e.g., -1.96), this could indicate forms of
 p-hacking that violate the assumptions of RTMA.
 }
 \examples{
-z_density(lodder$yi, lodder$vi)
+z_density(money_priming_meta$yi, money_priming_meta$vi)
 }
