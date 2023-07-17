@@ -4,7 +4,10 @@
 #' effects of p-hacking (i.e., manipulation of results within studies to obtain
 #' significant, positive estimates) and traditional publication bias (i.e., the
 #' selective publication of studies with significant, positive results) in
-#' meta-analyses.
+#' meta-analyses. This method analyzes only nonaffirmative studies (i.e., those
+#' with significant, positive estimates). You can pass all studies in the meta-analysis
+#' or only the nonaffirmative ones; if the former, the function will still analyze only
+#' the nonaffirmative ones.
 #'
 #' @inheritParams metabias::params
 #' @param stan_control List passed to [rstan::sampling()] as the `control`
@@ -32,6 +35,7 @@
 #'
 #' @examples
 #' \donttest{
+#' # passing all studies, though only nonaffirmative ones will be analyzed
 #' money_priming_rtma <- phacking_meta(money_priming_meta$yi, money_priming_meta$vi,
 #'                                     parallelize = FALSE)
 #' }
@@ -78,6 +82,7 @@ phacking_meta <- function(yi, # data
   vals <- list(favor_positive = favor_positive,
                alpha_select = alpha_select,
                ci_level = ci_level,
+               tcrit = tcrit,
                k = k,
                k_affirmative = k - k_nonaffirm,
                k_nonaffirmative = k_nonaffirm)

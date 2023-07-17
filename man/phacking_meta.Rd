@@ -47,7 +47,7 @@ An object of class \code{\link[metabias:metabias-class]{metabias::metabias()}}, 
 \describe{
 \item{data}{A tibble with one row per study and the columns
 \code{yi}, \code{vi}, \code{sei}, \code{affirm}.}
-\item{values}{A list with the elements \code{favor_positive}, \code{alpha_select}, \code{ci_level}, \code{k}, \code{k_affirmative}, \code{k_nonaffirmative}, \code{optim_converged}.
+\item{values}{A list with the elements \code{favor_positive}, \code{alpha_select}, \code{ci_level}, \code{tcrit}, \code{k}, \code{k_affirmative}, \code{k_nonaffirmative}, \code{optim_converged}.
 \code{optim_converged} indicates whether the optimization to find
 the posterior mode converged.}
 \item{stats}{A tibble with two rows and the columns
@@ -62,10 +62,14 @@ Fits right-truncated meta-analysis (RTMA), a bias correction for the joint
 effects of p-hacking (i.e., manipulation of results within studies to obtain
 significant, positive estimates) and traditional publication bias (i.e., the
 selective publication of studies with significant, positive results) in
-meta-analyses.
+meta-analyses. This method analyzes only nonaffirmative studies (i.e., those
+with significant, positive estimates). You can pass all studies in the meta-analysis
+or only the nonaffirmative ones; if the former, the function will still analyze only
+the nonaffirmative ones.
 }
 \examples{
 \donttest{
+# passing all studies, though only nonaffirmative ones will be analyzed
 money_priming_rtma <- phacking_meta(money_priming_meta$yi, money_priming_meta$vi,
                                     parallelize = FALSE)
 }
